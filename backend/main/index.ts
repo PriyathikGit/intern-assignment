@@ -13,7 +13,8 @@ router.get('/stocks', (req, res) => {
 });
 
 router.post('/stocks/:id', (req, res) => {
-  const id = req.params.id;
+  const {id} = req.params;
+  console.log(id);
   const body = req.body;
   console.log(body);
   if (!body.duration) {

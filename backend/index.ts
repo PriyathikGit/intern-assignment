@@ -6,6 +6,7 @@ import main from "./main";
 dotenv.config();
 
 const app: Express = express();
+
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
