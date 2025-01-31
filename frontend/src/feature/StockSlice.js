@@ -52,14 +52,14 @@ export const fetchStockData = createAsyncThunk(
       try {
         const response = await axios.post(`/api/stocks/${id}`, { duration });
 
-        // Extract the `data` array from the response
+        // Extract the `data` array from the response, response consists object
         const newData = response.data?.data || [];
         console.log(newData);
 
         if (Array.isArray(newData) && newData.length > 0) {
           stockData = newData; // Store only the new data
 
-          // Dispatch an action to update the Redux state incrementally
+          // Dispatch an action
           dispatch(setStockData(newData));
         }
 
@@ -74,8 +74,6 @@ export const fetchStockData = createAsyncThunk(
     if (stockData.length === 0) {
       throw new Error('Failed to fetch stock data after multiple attempts');
     }
-
-    console.log('Final Stock Data:', stockData); // Debugging log
     return stockData;
   }
 );

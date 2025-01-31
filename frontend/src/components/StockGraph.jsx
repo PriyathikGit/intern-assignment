@@ -10,9 +10,7 @@ const StockGraph = ({ duration }) => {
   const dispatch = useDispatch();
   // current state
   const { selectedStock, stockData } = useSelector((state) => state.stocks);
-  console.log(stockData);
-  console.log(selectedStock);
-
+  
   useEffect(() => {
     if (selectedStock) {
       // this send the duration and selected stock from dropdown and call the api using redux
@@ -20,6 +18,7 @@ const StockGraph = ({ duration }) => {
     }
   }, [dispatch, selectedStock, duration]);
 
+  // change the timestamps
   const formattedLabels = stockData?.length
     ? stockData.map((entry) =>
       new Date(entry.timestamp).toLocaleDateString('en-US', {

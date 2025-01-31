@@ -6,9 +6,6 @@ import { Container, Box } from '@mui/material';
 
 function App() {
   const [duration, setDuration] = useState('1y');
-
-
-  
   return (
     <Container maxWidth="lg" >
       <Box my={6}>
