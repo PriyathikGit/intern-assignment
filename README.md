@@ -44,11 +44,16 @@ Eg.
 
 ## Running services
 ### Instructions to run the UI
-_enter details here!_
+1. cd frontend
+2. npm install
+3. npm run dev
+4. select the stock from the dropdown
+5. It automatically call the api for "1y" duration
+6. The duration button are dynamic on the available duration, if duration is available, it highlight with color, else grey;
+7. it automatically call the api till n(i am calling six time);
+8. You can switch to new duration, it will fetch new data.
 
 ### Instructions to run the backend API
-```bash
-cd backend
-yarn # or npm, to install dependencies
-yarn start # or npm start, to...start?
-```
+1. cd backend
+2. npm install
+3. npm run dev

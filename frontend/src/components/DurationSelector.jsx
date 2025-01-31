@@ -21,6 +21,7 @@ const DurationSelector = ({ duration,onDurationChange }) => {
   const handleClick = (duration) => {
     setSelectedDuration(duration);
     onDurationChange(duration);
+    ""
   };
 
   return (

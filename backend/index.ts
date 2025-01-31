@@ -9,14 +9,18 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // app.get("/", (req: Request, res: Response) => {
 //   res.send("Welcome to the alloan.ai");
 // });
-app.get('*', (req: Request, res: Response) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
-});
+
+// const frontendPath = path.join(__dirname, '../frontend/dist');
+// console.log('frontend path', frontendPath);
+// app.use(express.static(frontendPath));
+
+// app.get('*', (req: Request, res: Response) => {
+//   res.sendFile(path.join(frontendPath,'index.html'));
+// });
 
 app.use('/api', main);
 
